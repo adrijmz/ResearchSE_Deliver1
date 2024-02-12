@@ -1,52 +1,36 @@
 {
-    "code_repository": "https://github.com/adrijmz/ResearchSE_Deliver1",
-    "owner": {
-        "value": "adrijmz",
-        "type": "User"
-    },
-    "date_created": "2024-02-03T11:21:20Z",
-    "date_updated": "2024-02-11T23:05:06Z",
-    "license": {
-        "spdx_id": "MIT",
-        "name": "MIT License",
-        "url": "https://raw.githubusercontent.com/adrijmz/ResearchSE_Deliver1/main/LICENSE"
-    },
-    "name": "ResearchSE_Deliver1",
-    "full_name": "adrijmz/ResearchSE_Deliver1",
-    "issue_tracker": "https://api.github.com/repos/adrijmz/ResearchSE_Deliver1/issues",
-    "forks_url": "https://api.github.com/repos/adrijmz/ResearchSE_Deliver1/forks",
-    "stargazers_count": 0,
-    "keywords": "",
-    "forks_count": 0,
-    "download_url": "https://github.com/adrijmz/ResearchSE_Deliver1/releases",
-    "programming_languages": "Python",
-    "releases": [
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@type": "SoftwareSourceCode",
+    "license": "https://spdx.org/licenses/MIT",
+    "codeRepository": "https://github.com/adrijmz/ResearchSE_Deliver1",
+    "dateCreated": "2024-02-03",
+    "datePublished": "2024-02-12",
+    "dateModified": "2024-02-12",
+    "downloadUrl": "https://github.com/adrijmz/ResearchSE_Deliver1/archive/refs/tags/v1.1.0.tar.gz",
+    "name": "Extractor",
+    "version": "1.1.0",
+    "identifier": "10.5281/zenodo.10651049",
+    "description": "Extractor extracts and analyzed information from scientific articles in PDF format. It runs an script that performs various tasks to facilitate the analysis of multiple articles located in an specific directory.",
+    "applicationCategory": "Software",
+    "releaseNotes": "This release fix an error in the extract_links function that didn't allow read properly from papers.\n\nErrors fixed in this release\n\nextract_links funcion:\n\nThis version fix an error that didn't allow read properly the links from papers. Now links can be read and written down in links.txt\n\nsave automatically figures:\n\nThis version saves automatically the keyword cloud and the diagram in output directory.",
+    "developmentStatus": "active",
+    "referencePublication": "https://zenodo.org/records/10652249",
+    "keywords": [
+        "extract",
+        "analyze",
+        "links",
+        "word cloud",
+        "diagram"
+    ],
+    "programmingLanguage": [
+        "Python 3"
+    ],
+    "contributor": [
         {
-            "type": "Release",
-            "value": "https://api.github.com/repos/adrijmz/ResearchSE_Deliver1/releases/141643252",
-            "tag": "v1.0.0",
-            "name": " Release v1.0.0: Initial Release",
-            "author": {
-                "name": "adrijmz",
-                "type": "User"
-            },
-            "description": "This release introduces a Python script for extracting and analyzing information from scientific articles in PDF format. It provides a suite of features to facilitate the analysis of multiple articles, including text extraction, keyword cloud generation, and figure counting.\r\n\r\n## Features\r\n\r\n### Text Extraction: \r\nUtilizes Grobid to extract text from PDF documents, enabling further analysis of the content.\r\n### Keyword Cloud Generation: \r\nCreates a keyword cloud based on the abstracts of the articles, providing a visual representation of the most common words.\r\n### Figure Counting: \r\nCounts the number of figures in each article, aiding in understanding the visual content of the research presented.\r\n### Link Extraction (WIP): \r\nInitial implementation for extracting links within the PDF documents, particularly references cited in the articles. Please note that this feature is still a work in progress and may not function correctly.",
-            "tarball_url": "https://api.github.com/repos/adrijmz/ResearchSE_Deliver1/tarball/v1.0.0",
-            "zipball_url": "https://api.github.com/repos/adrijmz/ResearchSE_Deliver1/zipball/v1.0.0",
-            "html_url": "https://github.com/adrijmz/ResearchSE_Deliver1/releases/tag/v1.0.0",
-            "url": "https://api.github.com/repos/adrijmz/ResearchSE_Deliver1/releases/141643252",
-            "release_id": 141643252,
-            "date_created": "2024-02-12T15:50:59Z",
-            "date_published": "2024-02-12T15:56:05Z"
+            "@type": "Person",
+            "givenName": "Adrian",
+            "familyName": "Jimenez Cano",
+            "email": "adrian.jimenez.cano@alumnos.upm.es"
         }
-    ],
-    "releases_ids": [141643252],
-    "readme_url": "https://raw.githubusercontent.com/adrijmz/ResearchSE_Deliver1/main/README.md",
-    "description": [
-        "This repository contains a Python script for extracting and analyzing information from scientific articles in PDF format. The script performs various tasks to facilitate the analysis of multiple articles located in the directory /papers.\n \n",
-        "Utilizes Grobid to extract text from PDF documents, enabling further analysis of the content. \n",
-        "Creates a keyword cloud based on the abstracts of the articles, providing a visual representation of the most common words. \n",
-        "Attempts to extract links within the PDF documents, particularly references cited in the articles, providing additional resources for research.\n \n"
-    ],
-    "full_title": "Repository Overview"
+    ]
 }
