@@ -1,0 +1,17 @@
+title: "Extractor: Extracts data from a file"
+license: "MIT"
+authors:
+  - family-names: "Jimenez Cano"
+    given-names: "Adrian"
+    orcid: "https://orcid.org/0009-0009-8396-9872"
+
+cff-version: "1.0.0"
+message: "If you use this software, please cite it as below."
+preferred-citation:
+  authors:
+    - family-names: "Jimenez Cano"
+      given-names: "Adrian"
+  title: "Extractor: Extracts data from a file"
+  type: "software"
+  year: 2024
+  doi: "10.5281/zenodo.10652249"

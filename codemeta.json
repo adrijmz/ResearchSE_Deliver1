@@ -28,6 +28,7 @@
     "contributor": [
         {
             "@type": "Person",
+            "@id": "https://orcid.org/0009-0009-8396-9872",
             "givenName": "Adrian",
             "familyName": "Jimenez Cano",
             "email": "adrian.jimenez.cano@alumnos.upm.es"
