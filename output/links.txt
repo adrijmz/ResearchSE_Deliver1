@@ -1,0 +1,71 @@
+----------------------------------------
+Links found in /Users/adrian/Developer/GitHub/ResearchSE_Deliver1/papers/CIDR15_Paper16.pdf:
+http://creativecommons.org/licenses/by/3.0/),
+http://en.wikipedia.org/wiki/Apache_Hadoop
+http://en.wikipedia.org/wiki/Turtles_all_the_way_down
+http://en.wikipedia.org/wiki/Write_amplification
+----------------------------------------
+----------------------------------------
+Links found in /Users/adrian/Developer/GitHub/ResearchSE_Deliver1/papers/cacm12.pdf:
+http://netflixprize.com).
+http://www.cs.washington.edu/homes/pedrod/
+http://www.videolectures.
+----------------------------------------
+----------------------------------------
+Links found in /Users/adrian/Developer/GitHub/ResearchSE_Deliver1/papers/b-trees-write-optimization.pdf:
+https://github.com/oscarlab/Be-Tree
+http://www.tokutek.com/products/tokudb-
+----------------------------------------
+----------------------------------------
+Links found in /Users/adrian/Developer/GitHub/ResearchSE_Deliver1/papers/extensible-pattern-matching-extensible-language.pdf:
+http://planet.racket-lang.org/
+http://racket-lang.org/tr1/
+http://hackage.haskell.org/trac/ghc/wiki/ViewPatter
+----------------------------------------
+----------------------------------------
+Links found in /Users/adrian/Developer/GitHub/ResearchSE_Deliver1/papers/compiling-pattern-matching-to-good-decision-trees.pdf:
+http://www.smlnj.org/compiler-notes/
+http://coq.inria.fr/
+http://caml.
+http://manju.cs.berkeley.
+----------------------------------------
+----------------------------------------
+Links found in /Users/adrian/Developer/GitHub/ResearchSE_Deliver1/papers/ideal-hash-trees.pdf:
+----------------------------------------
+----------------------------------------
+Links found in /Users/adrian/Developer/GitHub/ResearchSE_Deliver1/papers/v59i10.pdf:
+http://www.jstatsoft.org/
+https://github.com/hadley/tidy-data
+http://religions.pewforum.org/pdf/comparison-Income%20Distribution%20of%20Religious%
+https://github.com/hadley/data-baby-names
+https://github.com/hadley/
+http://CRAN.R-project.org/package=
+http://www.ibm.com/software/analytics/spss/
+http://www.R-project.org/
+http://www.sas.com/
+http://www.stata.com/
+http://www.jstatsoft.org/v21/i12/
+http://www.jstatsoft.org/v40/i01/
+http://had.co.nz/
+http://www.jstatsoft.org/
+http://www.amstat.org/
+----------------------------------------
+----------------------------------------
+Links found in /Users/adrian/Developer/GitHub/ResearchSE_Deliver1/papers/buridans-principle.pdf:
+http://research.microsoft.com/
+----------------------------------------
+----------------------------------------
+Links found in /Users/adrian/Developer/GitHub/ResearchSE_Deliver1/papers/epidemic-broadcast-trees.pdf:
+http://www.di.fc.ul.pt/tech-reports
+http://planet-lab.org/
+http://peersim.sourceforge.net/.
+----------------------------------------
+----------------------------------------
+Links found in /Users/adrian/Developer/GitHub/ResearchSE_Deliver1/papers/download-2.pdf:
+https://www
+http://www.cs.uvm.edu/
+http://www.cs.uvm.
+http://rulequest.com/see5-comparison.html.
+http://rulequest.com/Personal/c4.5r8.tar.gz
+http://dx.doi.org/10.1016/0165-0114(86)90004-7
+----------------------------------------
