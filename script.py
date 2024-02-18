@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 # Función para llamar a la API de Grobid y extraer el texto del documento PDF
 def extract_text_with_grobid(pdf_path):
-    url = 'https://kermitt2-grobid.hf.space/api/processFulltextDocument'
+    url = 'http://localhost:8070/api/processFulltextDocument'
     files = {'input': open(pdf_path, 'rb')}
     response = requests.post(url, files=files)
     if response.status_code == 200:
