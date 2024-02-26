@@ -2,12 +2,13 @@ import os
 import re
 import PyPDF2
 import requests
+import argparse
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
 # Función para llamar a la API de Grobid y extraer el texto del documento PDF
 def extract_text_with_grobid(pdf_path):
-    url = 'http://localhost:8070/api/processFulltextDocument'
+    url = 'http://server:8070/api/processFulltextDocument'
     files = {'input': open(pdf_path, 'rb')}
     response = requests.post(url, files=files)
     if response.status_code == 200:
@@ -20,12 +21,7 @@ def extract_text_with_grobid(pdf_path):
 def generate_keyword_cloud(abstracts):
     text = ' '.join(abstracts)
     wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
-    plt.figure(figsize=(10, 5))
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis('off')
-    # Guardar la nube de palabras en un fichero en la carpeta de salida
-    plt.savefig(os.path.join(output_directory, 'keyword_cloud.png'))  
-    plt.show()
+    wordcloud.to_file(os.path.join(output_directory, 'keyword_cloud.png'))
 
 # Función para contar el número de figuras por artículo
 def count_figures(articles):
@@ -36,7 +32,6 @@ def count_figures(articles):
     plt.title('Number of Figures per Article')
     # Guardar el gráfico de figuras por articulo en un fichero en la carpeta de salida
     plt.savefig(os.path.join(output_directory, 'figure_counts.png'))  
-    plt.show()
 
 # Función para extraer los enlaces de un artículo
 def extract_links(pdf_path):
@@ -63,29 +58,47 @@ def clear_links_file():
     with open(os.path.join(output_directory, 'links.txt'), 'w') as f:
         f.write('')
 
-pdf_directory = '/Users/adrian/Developer/GitHub/ResearchSE_Deliver1/papers'
-output_directory = '/Users/adrian/Developer/GitHub/ResearchSE_Deliver1/output'
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(
+    prog='script.py',
+    description='Process some PDFs.')
 
-# Crear la carpeta de salida si no existe
-os.makedirs(output_directory, exist_ok=True)
+    parser.add_argument(
+        '--INPUT', 
+        default='./papers',
+        type=str, 
+        help='Directory containing PDFs')
+    
+    parser.add_argument(
+        '--OUTPUT', 
+        default='./output',
+        type=str, 
+        help='Directory to save the output files')
+    
+    args = parser.parse_args()
+    pdf_directory = args.INPUT
+    output_directory = args.OUTPUT
 
-abstracts = []
-articles = []
+    # Crear la carpeta de salida si no existe
+    os.makedirs(output_directory, exist_ok=True)
 
-# Extraer texto de archivos PDF y llenar las listas abstracts y articles utilizando Grobid
-for filename in os.listdir(pdf_directory):
-    if filename.endswith('.pdf'):
-        pdf_path = os.path.join(pdf_directory, filename)
-        text = extract_text_with_grobid(pdf_path)
-        abstracts.append(text[:1000])  # Tomar solo los primeros 1000 caracteres como abstracto
-        articles.append(text)
+    abstracts = []
+    articles = []
 
-# Llamadas a las funciones para realizar las tareas
-generate_keyword_cloud(abstracts)
-count_figures(articles)
-clear_links_file()
+    # Extraer texto de archivos PDF y llenar las listas abstracts y articles utilizando Grobid
+    for filename in os.listdir(pdf_directory):
+        if filename.endswith('.pdf'):
+            pdf_path = os.path.join(pdf_directory, filename)
+            text = extract_text_with_grobid(pdf_path)
+            abstracts.append(text[:1000])  # Tomar solo los primeros 1000 caracteres como abstracto
+            articles.append(text)
 
-for filename in os.listdir(pdf_directory):
-    if filename.endswith('.pdf'):
-        pdf_path = os.path.join(pdf_directory, filename)
-        links = extract_links(pdf_path)
+    # Llamadas a las funciones para realizar las tareas
+    generate_keyword_cloud(abstracts)
+    count_figures(articles)
+    clear_links_file()
+
+    for filename in os.listdir(pdf_directory):
+        if filename.endswith('.pdf'):
+            pdf_path = os.path.join(pdf_directory, filename)
+            links = extract_links(pdf_path)
