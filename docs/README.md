@@ -32,7 +32,7 @@ To install the GROBID image, execute the following command:
 
 
 ### Install Python Environment
-This project requires Python >= 3.11 
+This project requires Python >= 3.11
 
 ### Step 1
 Create a virtual environment to isolate the project dependencies
