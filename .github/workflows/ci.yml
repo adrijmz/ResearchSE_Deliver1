@@ -24,10 +24,16 @@ jobs:
 
     - name: Run Tests
       run: |
-        # Run test
+        python3 test/test_test.py
+
         
     - name: Build Docker Images
       run: |
-        # Build Docker images
+        docker pull lfoppiano/grobid:0.7.2
+        docker pull adri4ndev/extractor:1.0.0
+
+
+
+        
 
     

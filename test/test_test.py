@@ -7,7 +7,7 @@ def is_pdf_file(file_path):
 
 class TestFileFormat(unittest.TestCase):
     def test_all_files_are_pdf(self):
-        folder_path = 'papers'
+        folder_path = 'papers/'
         files = os.listdir(folder_path)
         for file in files:
             file_path = os.path.join(folder_path, file)
