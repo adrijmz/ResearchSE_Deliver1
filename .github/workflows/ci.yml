@@ -35,9 +35,3 @@ jobs:
         docker run --rm --name server --network extractor_network -p 8070:8070 -d lfoppiano/grobid:0.7.2
         sleep 30
         docker run --rm --name extractor --network extractor_network -d adri4ndev/extractor:1.0.0
-
-
-
-        
-
-    
