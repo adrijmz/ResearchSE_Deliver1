@@ -1,0 +1,32 @@
+# Install
+## Using Docker
+To install the GROBID image, execute the following command:
+
+    docker pull lfoppiano/grobid:0.7.2
+
+To install the extractor image, execute the followint command:
+
+    docker pull adri4ndev/extractor:1.0.0
+
+
+## From Source
+To install the GROBID image, execute the following command:
+
+    docker pull lfoppiano/grobid:0.7.2
+
+
+### Install Python Environment
+This project requires Python >= 3.11
+
+### Step 1
+Create a virtual environment to isolate the project dependencies
+
+    conda create -n myenv python=3.11
+    conda init myenv
+    conda activate myenv
+
+
+### Step 2
+Install dependencies
+
+    pip install -r requirements.txt

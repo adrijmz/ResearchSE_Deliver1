@@ -1,13 +1,10 @@
 site_name: extractor documentation
 nav:
-  - Home: README.md
-  - Rationale: rationale.md
+  - Home: /docs/home.md
+  - Install: /docs/install.md
+  - Usage: /docs/usage.md
 theme:
-  name: material
+  name: readthedocs
 
-markdown_extensions:
-  - admonition
-  - codehilite:
-      guess_lang: false
-  - toc:
-      permalink: true
+extra:
+  author: Adrian Jimenez Cano
