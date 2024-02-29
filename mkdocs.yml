@@ -1,8 +1,10 @@
 site_name: extractor documentation
+
 nav:
-  - Home: /docs/home.md
-  - Install: /docs/install.md
-  - Usage: /docs/usage.md
+  - Home: index.md
+  - Install: install.md
+  - Usage: usage.md
+  
 theme:
   name: readthedocs
 
