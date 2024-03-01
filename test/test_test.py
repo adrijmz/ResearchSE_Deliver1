@@ -1,5 +1,9 @@
 import os
 import unittest
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from src.script import generate_keyword_cloud
 from src.script import clear_links_file
 
@@ -11,7 +15,7 @@ class TestFiles(unittest.TestCase):
 
     # Test to check if all files in the papers folder are PDF
     def test_all_files_are_pdf(self):
-        folder_path = '../papers'
+        folder_path = './papers'
         files = os.listdir(folder_path)
         for file in files:
             self.file_path = os.path.join(folder_path, file)
@@ -19,8 +23,8 @@ class TestFiles(unittest.TestCase):
 
     # Test to check if the links file is empty
     def test_is_empty_document(self):
-        clear_links_file('../output')
-        with open('../output/links.txt', 'r') as f:
+        clear_links_file('./output')
+        with open('./output/links.txt', 'r') as f:
             self.assertEqual(f.read(), '')
 
 
@@ -38,8 +42,8 @@ class TestKeywordCloudGeneration(unittest.TestCase):
                     "vulputate. Sed libero enim sed faucibus turpis. A condimentum vitae sapien pellentesque. Sem "
                     "viverra aliquet eget sit amet. Mauris sit amet massa vitae tortor.")
 
-        generate_keyword_cloud(abstract, '../output')
-        self.assertTrue(os.path.exists('../output/keyword_cloud.png'))
+        generate_keyword_cloud(abstract, './output')
+        self.assertTrue(os.path.exists('./output/keyword_cloud.png'))
 
 
 if __name__ == '__main__':
