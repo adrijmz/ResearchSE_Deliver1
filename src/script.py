@@ -6,6 +6,7 @@ import argparse
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
+
 # Función para llamar a la API de Grobid y extraer el texto del documento PDF
 def extract_text_with_grobid(pdf_path):
     url = 'http://server:8070/api/processFulltextDocument'
@@ -17,21 +18,24 @@ def extract_text_with_grobid(pdf_path):
         print(f"Failed to extract text from {pdf_path}")
         return ''
 
+
 # Función para crear una nube de palabras clave basada en la información del abstract
-def generate_keyword_cloud(abstracts):
+def generate_keyword_cloud(abstracts, output_directory):
     text = ' '.join(abstracts)
     wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
     wordcloud.to_file(os.path.join(output_directory, 'keyword_cloud.png'))
 
+
 # Función para contar el número de figuras por artículo
-def count_figures(articles):
+def count_figures(articles, output_directory):
     fig_counts = [len(re.findall(r'\bfigure\b|\bfig\b', article, flags=re.IGNORECASE)) for article in articles]
     plt.bar(range(1, len(articles) + 1), fig_counts)
     plt.xlabel('Article')
     plt.ylabel('Number of Figures')
     plt.title('Number of Figures per Article')
     # Guardar el gráfico de figuras por articulo en un fichero en la carpeta de salida
-    plt.savefig(os.path.join(output_directory, 'figure_counts.png'))  
+    plt.savefig(os.path.join(output_directory, 'figure_counts.png'))
+
 
 # Función para extraer los enlaces de un artículo
 def extract_links(pdf_path):
@@ -41,9 +45,10 @@ def extract_links(pdf_path):
         for page_num in range(len(reader.pages)):
             page = reader.pages[page_num]
             text = page.extract_text()
-            page_links = re.findall(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', text)
+            page_links = re.findall(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+',
+                                    text)
             links.extend(page_links)
-    
+
     # Guardar los enlaces en un archivo de texto en la carpeta de salida
     with open(os.path.join(output_directory, 'links.txt'), 'a') as f:
         f.write('-' * 40 + '\n')
@@ -53,28 +58,30 @@ def extract_links(pdf_path):
         f.write('-' * 40 + '\n')
     return links
 
+
 # Función para limpiar el archivo de enlaces
-def clear_links_file():
+def clear_links_file(output_directory):
     with open(os.path.join(output_directory, 'links.txt'), 'w') as f:
         f.write('')
 
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-    prog='script.py',
-    description='Process some PDFs.')
+        prog='script.py',
+        description='Process some PDFs.')
 
     parser.add_argument(
-        '--INPUT', 
+        '--INPUT',
         default='./papers',
-        type=str, 
+        type=str,
         help='Directory containing PDFs')
-    
+
     parser.add_argument(
-        '--OUTPUT', 
+        '--OUTPUT',
         default='./output',
-        type=str, 
+        type=str,
         help='Directory to save the output files')
-    
+
     args = parser.parse_args()
     pdf_directory = args.INPUT
     output_directory = args.OUTPUT
@@ -94,9 +101,9 @@ if __name__ == '__main__':
             articles.append(text)
 
     # Llamadas a las funciones para realizar las tareas
-    generate_keyword_cloud(abstracts)
-    count_figures(articles)
-    clear_links_file()
+    generate_keyword_cloud(abstracts, output_directory)
+    count_figures(articles, output_directory)
+    clear_links_file(output_directory)
 
     for filename in os.listdir(pdf_directory):
         if filename.endswith('.pdf'):
