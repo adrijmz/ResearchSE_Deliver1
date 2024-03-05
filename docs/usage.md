@@ -43,7 +43,8 @@ url = 'http://localhost:8070/api/processFulltextDocument'
 ```
 To run python script from the root directory
 ```bash
-pyth
+python3 src/script.py
+```
 
 To access the GROBID service, go to the following URL
 - http://localhost:8070/
