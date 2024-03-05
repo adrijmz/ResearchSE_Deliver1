@@ -12,7 +12,7 @@
     "identifier": "10.5281/zenodo.10651048",
     "description": "Extractor extracts and analyzed information from scientific articles in PDF format. It runs an script that performs various tasks to facilitate the analysis of multiple articles located in an specific directory.",
     "applicationCategory": "Software",
-    "releaseNotes": "Final release with documentation updated.",
+    "releaseNotes": "Final release with documentation updated and Dockerfile fixed.",
     "developmentStatus": "active",
     "referencePublication": "https://zenodo.org/records/10651048",
     "keywords": [

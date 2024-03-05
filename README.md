@@ -20,18 +20,18 @@ This repository contains a Python script for extracting and analyzing informatio
 ### Using Docker
 To install the GROBID image, execute the following command
 ```bash
-    docker pull lfoppiano/grobid:0.7.2
+docker pull lfoppiano/grobid:0.7.2
 ```
 
 To install the extractor image, execute the followint command
 ```bash
-    docker pull adri4ndev/extractor:1.0.0
+docker pull adri4ndev/extractor:1.0.0
 ```
 
 ### From Source
 To install the GROBID image, execute the following command
 ```bash
-    docker pull lfoppiano/grobid:0.7.2
+docker pull lfoppiano/grobid:0.7.2
 ```
 
 ### Install Python Environment
@@ -40,58 +40,71 @@ This project requires Python >= 3.11
 ### Step 1
 Create a virtual environment to isolate the project dependencies
 ```bash
-    conda create -n myenv python=3.11
-    conda init myenv
-    conda activate myenv
+conda create -n myenv python=3.11
+```
+Init the environment created if it is necessary
+```bash
+conda init myenv
+```
+Activate the new environment
+```bash
+conda activate myenv
 ```
 
 ### Step 2
 Clone repository and install dependencies
 ```bash
-    git clone git@github.com:adrijmz/extractor.git
-    cd /path/to/extractor
-    pip install -r requirements.txt
+git clone git@github.com:adrijmz/extractor.git
+cd /path/to/extractor
+pip install -r requirements.txt
 ```
 
 ## Usage
 ### Using Docker
 Create a Docker network to communicate both containers
 ```bash
-    docker network create extractor_network
+docker network create extractor_network
 ```
 
 To run the GROBID container, execute the following command
 ```bash
-    docker run --name server --network extractor_network -p 8070:8070 lfoppiano/grobid:0.7.2
+docker run --name server --network extractor_network -p 8070:8070 lfoppiano/grobid:0.7.2
 ```
 
-To run extractor container, execute the following command
+To run extractor container, open a new terminal window and execute the following command
 ```bash
-    docker run --name extractor -it --network extractor_network adri4ndev/extractor:1.0.0
+docker run --name extractor --network extractor_network adri4ndev/extractor:1.0.0
 ```
 
 #### If you want to see the files generated and you have used Docker to run extractor, execute the following command
 
 To check container ID
 ```bash
-    docker ps -a
+docker ps -a
 ```
 
 To copy all files to a desire directory
 ```bash
-    docker cp container_id:/app /path/to/your/directory
+docker cp container_id:/app /path/to/your/directory
 ```
 
 ### From Source
 
 To run the GROBID container, execute the following command
 ```bash
-    docker run --name server -p 8070:8070 lfoppiano/grobid:0.7.2
+docker run --name server -p 8070:8070 lfoppiano/grobid:0.7.2
 ```
-
+Change in src/script.py this url value
+```bash
+url = 'http://server:8070/api/processFulltextDocument'
+```
+to this value
+```bash
+url = 'http://localhost:8070/api/processFulltextDocument'
+```
 To run python script from the root directory
 ```bash
-    python3 /src/script.py
+python3 src/script.py
 ```
 
 To access the GROBID service, go to the following URL
