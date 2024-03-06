@@ -19,7 +19,7 @@ This repository contains a Python script for extracting and analyzing informatio
 ## Install
 First of all, clone the repository
 ```bash
-git clone git@github.com:adrijmz/extractor.git
+git clone https://github.com/adrijmz/extractor.git
 ```
 
 ### Using Docker
