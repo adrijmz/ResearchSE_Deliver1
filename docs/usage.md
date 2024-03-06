@@ -10,9 +10,9 @@ To run the GROBID container, execute the following command
 docker run --name server --network extractor_network -p 8070:8070 lfoppiano/grobid:0.7.2
 ```
 
-To run extractor container, execute the following command
+To run extractor container, open a new terminal window and execute the following command
 ```bash
-docker run --name extractor --network extractor_network adri4ndev/extractor:1.0.0
+docker run --name extractor --network extractor_network extractor
 ```
 
 #### If you want to see the files generated and you have used Docker to run extractor, execute the following command

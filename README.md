@@ -4,7 +4,7 @@
 
 https://extractor.readthedocs.io/en/latest/
 
-This repository contains a Python script for extracting and analyzing information from scientific articles in PDF format. The script performs various tasks to facilitate the analysis of multiple articles located in the directory /papers.
+This repository contains a Python script for extracting and analyzing information from scientific articles in PDF format. The script performs various tasks to facilitate the analysis of multiple articles located in the directory /papers. To extract all information the script use the service GROBID (2008-2022) <https://github.com/kermitt2/grobid>.
 
 ## Features
 - #### Extraction of PDF Text: 
@@ -17,15 +17,21 @@ This repository contains a Python script for extracting and analyzing informatio
     Attempts to extract links within the PDF documents, particularly references cited in the articles, providing additional resources for research.
 
 ## Install
+First of all, clone the repository
+```bash
+git clone git@github.com:adrijmz/extractor.git
+```
+
 ### Using Docker
 To install the GROBID image, execute the following command
 ```bash
 docker pull lfoppiano/grobid:0.7.2
 ```
 
-To install the extractor image, execute the followint command
+To build the extractor image, execute the followint command from the root directory of the repository
 ```bash
-docker pull adri4ndev/extractor:1.0.0
+cd /path/to/root/directory/of/extractor
+docker build -t extractor .
 ```
 
 ### From Source
@@ -35,7 +41,7 @@ docker pull lfoppiano/grobid:0.7.2
 ```
 
 ### Install Python Environment
-This project requires Python >= 3.11 
+This project requires Python >= 3.11
 
 ### Step 1
 Create a virtual environment to isolate the project dependencies
@@ -52,10 +58,9 @@ conda activate myenv
 ```
 
 ### Step 2
-Clone repository and install dependencies
+Install dependencies
 ```bash
-git clone git@github.com:adrijmz/extractor.git
-cd /path/to/extractor
+cd /path/to/root/directory/of/extractor
 pip install -r requirements.txt
 ```
 
@@ -73,7 +78,7 @@ docker run --name server --network extractor_network -p 8070:8070 lfoppiano/grob
 
 To run extractor container, open a new terminal window and execute the following command
 ```bash
-docker run --name extractor --network extractor_network adri4ndev/extractor:1.0.0
+docker run --name extractor --network extractor_network extractor
 ```
 
 #### If you want to see the files generated and you have used Docker to run extractor, execute the following command
@@ -102,7 +107,7 @@ to this value
 ```bash
 url = 'http://localhost:8070/api/processFulltextDocument'
 ```
-To run python script from the root directory
+To run python script from the root directory, execute the following command
 ```bash
 python3 src/script.py
 ```

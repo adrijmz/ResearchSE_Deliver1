@@ -2,7 +2,7 @@
 
 # Repository Overview
 
-This repository aims to provide a Python script for extracting and analyzing information from scientific articles in PDF format. The rationale behind this project is to facilitate the analysis of multiple scientific articles, aiding researchers and practitioners in comprehensively understanding and extracting valuable insights from academic literature.
+This repository aims to provide a Python script for extracting and analyzing information from scientific articles in PDF format. The rationale behind this project is to facilitate the analysis of multiple scientific articles, aiding researchers and practitioners in comprehensively understanding and extracting valuable insights from academic literature. To extract all information the script use the service GROBID (2008-2022) <https://github.com/kermitt2/grobid>.
 
 ## Goals
 

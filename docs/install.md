@@ -1,13 +1,19 @@
 # Install
+First of all, clone the repository
+```bash
+git clone git@github.com:adrijmz/extractor.git
+```
+
 ## Using Docker
 To install the GROBID image, execute the following command
 ```bash
 docker pull lfoppiano/grobid:0.7.2
 ```
 
-To install the extractor image, execute the followint command
+To build the extractor image, execute the followint command from the root directory of the repository
 ```bash
-docker pull adri4ndev/extractor:1.0.0
+cd /path/to/root/directory/of/extractor
+docker build -t extractor .
 ```
 
 ## From Source
@@ -34,9 +40,8 @@ conda activate myenv
 ```
 
 ### Step 2
-Clone repository and install dependencies
+Install dependencies
 ```bash
-git clone git@github.com:adrijmz/extractor.git
-cd /path/to/extractor
+cd /path/to/root/directory/of/extractor
 pip install -r requirements.txt
 ```
